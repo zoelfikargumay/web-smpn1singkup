@@ -3,294 +3,357 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SMP Negeri 1 Singkup - Resmi & Profesional</title>
-    
+    <title>SMP Negeri 1 Singkup</title>
     <style>
-        /* BASE STYLE (PENGGANTI BOOTSTRAP TOTAL) */
+        /* CSS Dasar Bawaan Berdasarkan Layout Asli */
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
         }
         body {
-            background-color: #f8f9fa;
-            color: #333333;
+            color: #333;
             line-height: 1.6;
+            background-color: #f8fafc;
         }
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        .row {
-            display: flex;
-            flex-wrap: wrap;
-            margin: 0 -15px;
-        }
-        .col-6 {
-            flex: 0 0 50%;
-            max-width: 50%;
-            padding: 0 15px;
-        }
-        .col-4 {
-            flex: 0 0 33.333%;
-            max-width: 33.333%;
-            padding: 0 15px;
-        }
-        .col-8 {
-            flex: 0 0 66.666%;
-            max-width: 66.666%;
-            padding: 0 15px;
-        }
-        
-        /* NAVBAR STYLE */
         nav {
-            background-color: #1a252f;
-            padding: 15px 0;
+            background: #fff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
             position: sticky;
             top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 100;
         }
-        .nav-container {
+        nav > div {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-        .brand {
-            color: #ffffff;
+        nav a {
             text-decoration: none;
+            color: #1e293b;
             font-weight: bold;
-            font-size: 20px;
         }
-        .brand small {
+        nav small {
             display: block;
-            font-size: 11px;
-            color: #bdc3c7;
             font-weight: normal;
-            margin-top: 2px;
+            font-size: 0.75rem;
+            color: #64748b;
         }
-        .nav-menu {
+        nav ul {
             display: flex;
             list-style: none;
             gap: 20px;
         }
-        .nav-menu a {
-            color: #ffffff;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 15px;
-            transition: color 0.3s;
+        nav ul a:hover {
+            color: #3b82f6;
         }
-        .nav-menu a:hover {
-            color: #f1c40f;
+        section {
+            padding: 60px 20px;
         }
-
-        /* HERO SECTION */
-        .hero-section {
-            background: linear-gradient(rgba(0, 40, 80, 0.75), rgba(0, 20, 40, 0.85)), 
-                        url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=1920') no-repeat center center;
-            background-size: cover;
-            min-height: 75vh;
-            display: flex;
-            align-items: center;
-            color: #ffffff;
-            padding: 60px 0;
+        section > div {
+            max-width: 1200px;
+            margin: 0 auto;
         }
-        .badge {
-            background-color: #f1c40f;
-            color: #1a252f;
-            padding: 6px 12px;
-            font-size: 12px;
-            font-weight: bold;
-            border-radius: 4px;
-            display: inline-block;
-            margin-bottom: 15px;
-            text-uppercase: uppercase;
-        }
-        .hero-section h1 {
-            font-size: 48px;
-            margin-bottom: 15px;
-            font-weight: 800;
-            letter-spacing: 1px;
-        }
-        .hero-section p {
-            font-size: 18px;
-            color: #eaeded;
-            margin-bottom: 30px;
-            max-width: 700px;
-        }
-        .btn {
-            display: inline-block;
-            padding: 12px 24px;
-            font-weight: bold;
-            text-decoration: none;
-            border-radius: 6px;
-            transition: all 0.3s;
-        }
-        .btn-warning {
-            background-color: #f1c40f;
-            color: #1a252f;
-        }
-        .btn-warning:hover {
-            background-color: #f39c12;
-        }
-        .btn-outline {
-            border: 2px solid #ffffff;
-            color: #ffffff;
-            margin-left: 10px;
-        }
-        .btn-outline:hover {
-            background-color: #ffffff;
-            color: #1a252f;
-        }
-
-        /* PROFIL SECTION */
-        .py-5 {
-            padding: 80px 0;
-        }
-        .bg-light {
-            background-color: #ffffff;
-        }
-        .img-fluid {
-            width: 100%;
-            height: auto;
-            border-radius: 12px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        .section-tag {
-            color: #3498db;
-            font-weight: bold;
-            text-transform: uppercase;
-            font-size: 13px;
-            margin-bottom: 10px;
-            display: block;
-        }
-        .section-title {
-            font-size: 32px;
-            font-weight: 700;
-            color: #2c3e50;
-            margin-bottom: 20px;
-        }
-        .text-muted {
-            color: #7f8c8d;
-            font-size: 16px;
-            margin-bottom: 25px;
-        }
-        .meta-box {
-            border-top: 1px solid #ecf0f1;
-            padding-top: 20px;
-            display: flex;
-            gap: 40px;
-        }
-        .meta-item h4 {
-            color: #3498db;
-            font-size: 18px;
-            margin-bottom: 5px;
-        }
-
-        /* CARDS / KEUNGGULAN */
         .text-center {
             text-align: center;
+            margin-bottom: 40px;
         }
-        .mb-5 {
-            margin-bottom: 50px;
+        span.sub {
+            color: #3b82f6;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+        h2 {
+            font-size: 2rem;
+            color: #1e293b;
+        }
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .img-box img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        .badge-grid {
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .badge-card {
+            background: #fff;
+            padding: 15px;
+            border-radius: 6px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            flex: 1;
         }
         .card {
-            background-color: #ffffff;
-            border-radius: 12px;
+            background: #fff;
             padding: 30px;
-            height: 100%;
+            border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            transition: transform 0.3s, box-shadow 0.3s;
-            border: 1px solid #f0f0f0;
         }
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        .card ul {
+            padding-left: 20px;
+            margin-top: 10px;
         }
-        .card-icon {
-            font-size: 40px;
-            color: #3498db;
+        .card ul li {
+            margin-bottom: 8px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        th {
+            background: #f1f5f9;
+            color: #1e293b;
+        }
+        .status-active {
+            background: #dcfce7;
+            color: #166534;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+        .icon-box {
+            font-size: 2rem;
             margin-bottom: 15px;
         }
-        .card h5 {
-            font-size: 20px;
-            color: #2c3e50;
-            margin-bottom: 10px;
-        }
-        .card p {
-            color: #7f8c8d;
-            font-size: 14px;
-        }
-
-        /* FOOTER */
         footer {
-            background-color: #1a252f;
-            color: #ffffff;
-            padding: 60px 0 30px 0;
+            background: #1e293b;
+            color: #f8fafc;
+            padding: 40px 20px 20px;
+        }
+        footer > div > div {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
         }
         footer h5 {
-            font-size: 18px;
-            color: #f1c40f;
-            margin-bottom: 20px;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            color: #fff;
         }
-        footer p {
-            color: #bdc3c7;
-            font-size: 14px;
-            margin-bottom: 10px;
-        }
-        .text-end {
-            text-align: right;
-        }
-        .social-icons a {
-            color: white;
-            font-size: 20px;
-            margin-left: 15px;
+        footer a {
+            color: #94a3b8;
             text-decoration: none;
+            margin-right: 15px;
         }
-        hr {
+        footer a:hover {
+            color: #fff;
+        }
+        footer hr {
             border: 0;
-            border-top: 1px solid #2c3e50;
-            margin: 30px 0;
+            border-top: 1px solid #334155;
+            margin: 30px 0 20px;
+        }
+        .footer-bottom {
+            text-align: center;
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+        .spmb-btn {
+            display: inline-block;
+            background: #10b981;
+            color: #fff;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-weight: bold;
+            margin-top: 15px;
+            transition: background 0.3s;
+        }
+        .spmb-btn:hover {
+            background: #059669;
         }
 
-        /* RESPONSIVE DESIGN */
+        /* ------------------------------------------- */
+        /* CSS BARU: UNTUK GAYA SLIDE SHOW (CAROUSEL) */
+        /* ------------------------------------------- */
+        .hero-carousel {
+            position: relative;
+            width: 100%;
+            height: 80vh;
+            overflow: hidden;
+            background-color: #000;
+        }
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        .carousel-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.8s ease-in-out;
+            z-index: 1;
+        }
+        .carousel-slide.active {
+            opacity: 1;
+            z-index: 2;
+        }
+        .carousel-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .carousel-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6); 
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+            padding: 0 20px;
+        }
+        .carousel-overlay span {
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            color: #3b82f6;
+            font-weight: bold;
+        }
+        .carousel-overlay h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            max-width: 800px;
+        }
+        .carousel-overlay p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        .carousel-buttons a {
+            text-decoration: none;
+            padding: 12px 28px;
+            border-radius: 30px;
+            font-weight: 600;
+            margin: 0 10px;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        .btn-primary {
+            background-color: #3b82f6;
+            color: white;
+        }
+        .btn-primary:hover {
+            background-color: #2563eb;
+        }
+        .btn-secondary {
+            border: 2px solid white;
+            color: white;
+        }
+        .btn-secondary:hover {
+            background-color: white;
+            color: #000;
+        }
+        .carousel-prev, .carousel-next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: none;
+            padding: 15px;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 50%;
+            z-index: 10;
+            transition: background 0.3s;
+        }
+        .carousel-prev:hover, .carousel-next:hover {
+            background: rgba(255, 255, 255, 0.5);
+        }
+        .carousel-prev { left: 20px; }
+        .carousel-next { right: 20px; }
+        .carousel-dots {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+            display: flex;
+            gap: 10px;
+        }
+        .dot {
+            width: 12px;
+            height: 12px;
+            background: rgba(255, 255, 255, 0.4);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .dot.active {
+            background: #3b82f6;
+            width: 24px;
+            border-radius: 10px;
+        }
+
+        /* Responsif Layar */
         @media (max-width: 768px) {
-            .col-4, .col-6, .col-8 {
-                flex: 0 0 100%;
-                max-width: 100%;
-                margin-bottom: 20px;
+            .grid-2 {
+                grid-template-columns: 1fr;
             }
-            .hero-section h1 {
-                font-size: 32px;
-            }
-            .text-end {
-                text-align: left;
-            }
-            .social-icons a {
-                margin-left: 0;
-                margin-right: 15px;
-            }
-            .meta-box {
-                flex-direction: column;
-                gap: 15px;
-            }
+            .hero-carousel { height: 60vh; }
+            .carousel-overlay h1 { font-size: 1.8rem; }
+            .carousel-overlay p { font-size: 0.95rem; }
+            .carousel-prev, .carousel-next { display: none; }
         }
     </style>
 </head>
 <body>
 
-    <!-- NAVBAR (Menu Atas) -->
+    <!-- NAVBAR -->
     <nav>
-        <div class="container nav-container">
-            <a class="brand" href="#">
+        <div>
+            <a href="#">
                 🏫 SMPN 1 SINGKUP
                 <small>Cerdas, Berkarakter, Berakhlak</small>
             </a>
-            <ul class="nav-menu">
+            <ul>
                 <li><a href="#">Beranda</a></li>
                 <li><a href="#profil">Profil</a></li>
                 <li><a href="#keunggulan">Keunggulan</a></li>
@@ -299,198 +362,208 @@
         </div>
     </nav>
 
-    <!-- HERO SECTION (Tampilan Utama) -->
-    <section class="hero-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-8">
-                    <span class="badge">Selamat Datang di Website Resmi</span>
+    <!-- HALAMAN AWAL DENGAN SLIDE SHOW (HERO SECTION) -->
+    <section class="hero-carousel" style="padding: 0;">
+        <div class="carousel-container">
+            <!-- Slide 1 -->
+            <div class="carousel-slide active">
+                <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1200" alt="Gedung Sekolah SMPN 1">
+                <div class="carousel-overlay">
+                    <span>Selamat Datang di Website Resmi</span>
                     <h1>SMP NEGERI 1 SINGKUP</h1>
                     <p>Membentuk Generasi Unggul yang Berakhlak Mulia, Berkarakter Kuat, dan Siap Menghadapi Tantangan Masa Depan.</p>
-                    <div>
-                        <a href="#profil" class="btn btn-warning">Jelajahi Profil</a>
-                        <a href="#kontak" class="btn btn-outline">Hubungi Kami</a>
+                    <div class="carousel-buttons">
+                        <a href="#profil" class="btn-primary">Jelajahi Profil</a>
+                        <a href="#kontak" class="btn-secondary">Hubungi Kami</a>
                     </div>
                 </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="carousel-slide">
+                <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=1200" alt="Kegiatan Belajar Mengajar">
+                <div class="carousel-overlay">
+                    <span>Fasilitas & Lingkungan Nyaman</span>
+                    <h1>Pembelajaran Inovatif</h1>
+                    <p>Didukung oleh tenaga pendidik kompeten dan fasilitas teknologi untuk menunjang masa depan siswa.</p>
+                    <div class="carousel-buttons">
+                        <a href="#keunggulan" class="btn-primary">Lihat Keunggulan</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="carousel-slide">
+                <img src="https://images.unsplash.com/photo-1516534775068-ba3e84589d90?q=80&w=1200" alt="Aktivitas Siswa">
+                <div class="carousel-overlay">
+                    <span>Ekstrakurikuler & Prestasi</span>
+                    <h1>Kembangkan Bakatmu</h1>
+                    <p>Temukan dan asah potensi terbaikmu melalui berbagai kegiatan kepramukaan, seni, dan olahraga.</p>
+                    <div class="carousel-buttons">
+                        <a href="#keunggulan" class="btn-primary">Kegiatan Siswa</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigasi Tombol Panah -->
+            <button class="carousel-prev" onclick="moveSlide(-1)">&#10094;</button>
+            <button class="carousel-next" onclick="moveSlide(1)">&#10095;</button>
+
+            <!-- Indikator Titik (Dots) -->
+            <div class="carousel-dots">
+                <span class="dot active" onclick="currentSlide(0)"></span>
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
             </div>
         </div>
     </section>
 
-    <!-- PROFIL / SAMBUTAN -->
-    <section id="profil" class="py-5 bg-light">
-        <div class="container">
-            <div class="row" style="align-items: center;">
-                <div class="col-6">
-                    <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=800" class="img-fluid" alt="Gedung Sekolah SMPN 1">
+    <!-- SAMBUTAN SEKOLAH -->
+    <section id="profil">
+        <div>
+            <div class="grid-2">
+                <div class="img-box">
+                    <img alt="Gedung Sekolah SMPN 1" src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&amp;w=800">
                 </div>
-                <div class="col-6">
-                    <span class="section-tag">Sambutan Sekolah</span>
-                    <h2 class="section-title">Membangun Masa Depan Bersama</h2>
-                    <p class="text-muted">SMP Negeri 1 Singkup berkomitmen untuk terus meningkatkan kualitas pendidikan demi melahirkan siswa-siswi yang berprestasi dan berintegritas tinggi. Dengan dukungan fasilitas yang menunjang dan tenaga pengajar profesional, kami siap membimbing putra-putri Anda mencapai potensi terbaiknya.</p>
+                <div>
+                    <span class="sub">Sambutan Sekolah</span>
+                    <h2>Membangun Masa Depan Bersama</h2>
+                    <p style="margin-top: 15px;">SMP Negeri 1 Singkup berkomitmen untuk terus meningkatkan kualitas pendidikan demi melahirkan siswa-siswi yang berprestasi dan berintegritas tinggi. Dengan dukungan fasilitas yang menunjang dan tenaga pengajar profesional, kami siap membimbing putra-putri Anda mencapai potensi terbaiknya.</p>
                     
-                    <div class="meta-box">
-                        <div class="meta-item">
+                    <div class="badge-grid">
+                        <div class="badge-card">
                             <h4>Akreditasi</h4>
-                            <p style="color: #7f8c8d; font-size: 14px;">Grade B (Baik)</p>
+                            <p style="color: #64748b; font-size: 0.9rem; margin-top: 5px;">Grade B (Baik)</p>
                         </div>
-                        <div class="meta-item">
+                        <div class="badge-card">
                             <h4>Kurikulum</h4>
-                            <p style="color: #7f8c8d; font-size: 14px;">Kurikulum Merdeka</p>
+                            <p style="color: #64748b; font-size: 0.9rem; margin-top: 5px;">Kurikulum Merdeka</p>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-<!-- VISI & MISI SEKOLAH -->
-    <section id="visimisi" class="py-5" style="background-color: #f1f2f6;">
-        <div class="container">
-            <div class="text-center mb-5">
-                <span class="section-tag">Komitmen Kami</span>
-                <h2 class="section-title">Visi & Misi SMPN 1 Singkup</h2>
-            </div>
-            <div class="row">
-                <!-- Kotak Visi -->
-                <div class="col-6" style="margin-bottom: 20px;">
-                    <div class="card" style="border-left: 5px solid #f1c40f;">
-                        <h5 class="fw-bold" style="color: #2c3e50; margin-bottom: 15px;">👁️ Visi Sekolah</h5>
-                        <p style="font-size: 16px; color: #34495e; font-style: italic;">
-                            "Terwujudnya generasi yang cerdas, berprestasi, berkarakter kuat, serta berakhlak mulia berdasarkan iman dan taqwa."
-                        </p>
-                    </div>
-                </div>
-                <!-- Kotak Misi -->
-                <div class="col-6" style="margin-bottom: 20px;">
-                    <div class="card" style="border-left: 5px solid #3498db;">
-                        <h5 class="fw-bold" style="color: #2c3e50; margin-bottom: 15px;">🎯 Misi Sekolah</h5>
-                        <ul style="color: #7f8c8d; font-size: 15px; padding-left: 20px; text-align: left;">
-                            <li style="margin-bottom: 8px;">Menyelenggarakan pembelajaran yang efektif dan inovatif demi mengembangkan potensi akademis siswa.</li>
-                            <li style="margin-bottom: 8px;">Menanamkan nilai-nilai karakter, budi pekerti, dan kedisiplinan dalam kehidupan sehari-hari.</li>
-                            <li style="margin-bottom: 8px;">Menumbuhkan penghayatan terhadap ajaran agama untuk membentuk akhlak yang mulia.</li>
-                            <li style="margin-bottom: 8px;">Mengembangkan bakat dan minat siswa melalui kegiatan ekstrakurikuler yang aktif.</li>
-                        </ul>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- DAFTAR GURU & STAF -->
-    <section id="guru" class="py-5" style="background-color: #ffffff;">
-        <div class="container">
-            <div class="text-center mb-5">
-                <span class="section-tag">Tenaga Pendidik</span>
-                <h2 class="section-title">Daftar Guru & Staf Sekolah</h2>
+    <!-- VISI & MISI -->
+    <section style="background: #f1f5f9;">
+        <div>
+            <div class="text-center">
+                <span class="sub">Komitmen Kami</span>
+                <h2>Visi &amp; Misi SMPN 1 Singkup</h2>
             </div>
-            
-            <div style="overflow-x: auto; background: #ffffff; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border: 1px solid #e2e8f0;">
-                <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 15px;">
+            <div class="grid-2">
+                <div class="card">
+                    <h5>👁️ Visi Sekolah</h5>
+                    <p style="margin-top: 15px; font-style: italic; color: #475569;">
+                        &quot;Terwujudnya generasi yang cerdas, berprestasi, berkarakter kuat, serta berakhlak mulia berdasarkan iman dan taqwa.&quot;
+                    </p>
+                </div>
+                <div class="card">
+                    <h5>🎯 Misi Sekolah</h5>
+                    <ul>
+                        <li>Menyelenggarakan pembelajaran yang efektif dan inovatif demi mengembangkan potensi akademis siswa.</li>
+                        <li>Menanamkan nilai-nilai karakter, budi pekerti, dan kedisiplinan dalam kehidupan sehari-hari.</li>
+                        <li>Menumbuhkan penghayatan terhadap ajaran agama untuk membentuk akhlak yang mulia.</li>
+                        <li>Mengembangkan bakat dan minat siswa melalui kegiatan ekstrakurikuler yang aktif.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DAFTAR GURU -->
+    <section>
+        <div>
+            <div class="text-center">
+                <span class="sub">Tenaga Pendidik</span>
+                <h2>Daftar Guru &amp; Staf Sekolah</h2>
+            </div>
+            <div style="overflow-x: auto;">
+                <table>
                     <thead>
-                        <tr style="background-color: #1a252f; color: #ffffff;">
-                            <th style="padding: 15px 20px;">No</th>
-                            <th style="padding: 15px 20px;">Nama Lengkap</th>
-                            <th style="padding: 15px 20px;">Jabatan / Mata Pelajaran</th>
-                            <th style="padding: 15px 20px;">Status</th>
+                        <tr>
+                            <th>No</th>
+                            <th>Nama Lengkap</th>
+                            <th>Jabatan / Mata Pelajaran</th>
+                            <th>Status</th>
                         </tr>
                     </thead>
-                    <tbody style="color: #4a5568;">
-                        <tr style="border-bottom: 1px solid #edf2f7;">
-                            <td style="padding: 15px 20px; font-weight: bold;">1</td>
-                            <td style="padding: 15px 20px; font-weight: bold; color: #2d3748;">ARHADI, S.Pd.</td>
-                            <td style="padding: 15px 20px;">Kepala Sekolah</td>
-                            <td style="padding: 15px 20px;"><span style="background: #e6fffa; color: #00a389; padding: 4px 10px; border-radius: 20px; font-size: 12px; font-weight: bold;">Aktif</span></td>
-                        </tr>
-                        <tr style="border-bottom: 1px solid #edf2f7; background-color: #f8fafc;">
-                            <td style="padding: 15px 20px; font-weight: bold;">2</td>
-                            <td style="padding: 15px 20px; color: #2d3748;">SULISTINI, S.Pd.</td>
-                            <td style="padding: 15px 20px;">Guru Matematika</td>
-                            <td style="padding: 15px 20px;"><span style="background: #e6fffa; color: #00a389; padding: 4px 10px; border-radius: 20px; font-size: 12px; font-weight: bold;">Aktif</span></td>
-                        </tr>
-                        <tr style="border-bottom: 1px solid #edf2f7;">
-                            <td style="padding: 15px 20px; font-weight: bold;">3</td>
-                            <td style="padding: 15px 20px; color: #2d3748;">YENI JUMIARTI, S.Pd.</td>
-                            <td style="padding: 15px 20px;">Guru Bahasa Indonesia</td>
-                            <td style="padding: 15px 20px;"><span style="background: #e6fffa; color: #00a389; padding: 4px 10px; border-radius: 20px; font-size: 12px; font-weight: bold;">Aktif</span></td>
-                        </tr>
-                        <tr style="border-bottom: 1px solid #edf2f7;">
-                            <td style="padding: 15px 20px; font-weight: bold;">4</td>
-                            <td style="padding: 15px 20px; color: #2d3748;">NURAFNIAR, S.Pd.</td>
-                            <td style="padding: 15px 20px;">Guru Bahasa Inggris</td>
-                            <td style="padding: 15px 20px;"><span style="background: #e6fffa; color: #00a389; padding: 4px 10px; border-radius: 20px; font-size: 12px; font-weight: bold;">Aktif</span></td>
-                        </tr>
-                        <tr style="border-bottom: 1px solid #edf2f7; background-color: #f8fafc;">
-                            <td style="padding: 15px 20px; font-weight: bold;">5</td>
-                            <td style="padding: 15px 20px; color: #2d3748;">YULIS RAHMAWATI, S.Pd.</td>
-                            <td style="padding: 15px 20px;">Guru IPA / Sains</td>
-                            <td style="padding: 15px 20px;"><span style="background: #e6fffa; color: #00a389; padding: 4px 10px; border-radius: 20px; font-size: 12px; font-weight: bold;">Aktif</span></td>
-                        </tr>
-                        <tr style="border-bottom: 1px solid #edf2f7; background-color: #f8fafc;">
-                            <td style="padding: 15px 20px; font-weight: bold;">6</td>
-                            <td style="padding: 15px 20px; color: #2d3748;">ZOELFIKAR GUMAY, SE.</td>
-                            <td style="padding: 15px 20px;">Guru IPS</td>
-                            <td style="padding: 15px 20px;"><span style="background: #e6fffa; color: #00a389; padding: 4px 10px; border-radius: 20px; font-size: 12px; font-weight: bold;">Aktif</span></td>
-                        </tr>
-                        <tr style="border-bottom: 1px solid #edf2f7; background-color: #f8fafc;">
-                            <td style="padding: 15px 20px; font-weight: bold;">7</td>
-                            <td style="padding: 15px 20px; color: #2d3748;">SRI PARYANTI, S.Pd.</td>
-                            <td style="padding: 15px 20px;">Guru AGAMA ISLAM</td>
-                            <td style="padding: 15px 20px;"><span style="background: #e6fffa; color: #00a389; padding: 4px 10px; border-radius: 20px; font-size: 12px; font-weight: bold;">Aktif</span></td>
-                        </tr> 
-                        <tr style="border-bottom: 1px solid #edf2f7; background-color: #f8fafc;">
-                            <td style="padding: 15px 20px; font-weight: bold;">8</td>
-                            <td style="padding: 15px 20px; color: #2d3748;">SUBRIANTO, S.Pd.</td>
-                            <td style="padding: 15px 20px;">Guru AGAMA ISLAM</td>
-                            <td style="padding: 15px 20px;"><span style="background: #e6fffa; color: #00a389; padding: 4px 10px; border-radius: 20px; font-size: 12px; font-weight: bold;">Aktif</span></td>
-                        </tr>
-                        <tr style="border-bottom: 1px solid #edf2f7; background-color: #f8fafc;">
-                            <td style="padding: 15px 20px; font-weight: bold;">9</td>
-                            <td style="padding: 15px 20px; color: #2d3748;">MALINI, S.Pd.</td>
-                            <td style="padding: 15px 20px;">Guru AGAMA KRISTEN & KATHOLIK</td>
-                            <td style="padding: 15px 20px;"><span style="background: #e6fffa; color: #00a389; padding: 4px 10px; border-radius: 20px; font-size: 12px; font-weight: bold;">Aktif</span></td>
-                        </tr>
-                        <tr style="border-bottom: 1px solid #edf2f7; background-color: #f8fafc;">
-                            <td style="padding: 15px 20px; font-weight: bold;">10</td>
-                            <td style="padding: 15px 20px; color: #2d3748;">REPINA LAYA, S.Pd.</td>
-                            <td style="padding: 15px 20px;">Guru Pendidikan Kewarganegaraan</td>
-                            <td style="padding: 15px 20px;"><span style="background: #e6fffa; color: #00a389; padding: 4px 10px; border-radius: 20px; font-size: 12px; font-weight: bold;">Aktif</span></td>
-                        </tr>
+                    <tbody>
+                        <tr><td>1</td><td>ARHADI, S.Pd.</td><td>Kepala Sekolah</td><td><span class="status-active">Aktif</span></td></tr>
+                        <tr><td>2</td><td>SULISTINI, S.Pd.</td><td>Guru Matematika</td><td><span class="status-active">Aktif</span></td></tr>
+                        <tr><td>3</td><td>YENI JUMIARTI, S.Pd.</td><td>Guru Bahasa Indonesia</td><td><span class="status-active">Aktif</span></td></tr>
+                        <tr><td>4</td><td>NURAFNIAR, S.Pd.</td><td>Guru Bahasa Inggris</td><td><span class="status-active">Aktif</span></td></tr>
+                        <tr><td>5</td><td>YULIS RAHMAWATI, S.Pd.</td><td>Guru IPA / Sains</td><td><span class="status-active">Aktif</span></td></tr>
+                        <tr><td>6</td><td>ZOELFIKAR GUMAY, SE.</td><td>Guru IPS</td><td><span class="status-active">Aktif</span></td></tr>
+                        <tr><td>7</td><td>SRI PARYANTI, S.Pd.</td><td>Guru AGAMA ISLAM</td><td><span class="status-active">Aktif</span></td></tr>
+                        <tr><td>8</td><td>SUBRIANTO, S.Pd.</td><td>Guru AGAMA ISLAM</td><td><span class="status-active">Aktif</span></td></tr>
+                        <tr><td>9</td><td>MALINI, S.Pd.</td><td>Guru AGAMA KRISTEN &amp; KATHOLIK</td><td><span class="status-active">Aktif</span></td></tr>
+                        <tr><td>10</td><td>REPINA LAYA, S.Pd.</td><td>Guru Pendidikan Kewarganegaraan</td><td><span class="status-active">Aktif</span></td></tr>
                     </tbody>
                 </table>
             </div>
-            <p style="font-size: 13px; color: #a0aec0; margin-top: 15px; text-align: italic;">*Catatan: Nama-nama di atas adalah contoh. Kamu bisa mengubah atau menambahkannya langsung di dalam kodingan HTML.</p>
+            <p style="font-size: 0.85rem; color: #64748b; margin-top: 15px; text-align: center;">*Catatan: Nama-nama di atas adalah contoh. Kamu bisa mengubah atau menambahkannya langsung di dalam kodingan HTML.</p>
         </div>
     </section>
-    <!-- KEUNGGULAN SEKOLAH -->
-    <section id="keunggulan" class="py-5">
-        <div class="container">
-            <div class="text-center mb-5">
-                <span class="section-tag">Mengapa Memilih Kami</span>
-                <h2 class="section-title">Keunggulan SMPN 1 Singkup</h2>
+    
+    <!-- KEUNGGULAN -->
+    <section id="keunggulan" style="background: #f1f5f9;">
+        <div>
+            <div class="text-center">
+                <span class="sub">Mengapa Memilih Kami</span>
+                <h2>Keunggulan SMPN 1 Singkup</h2>
             </div>
-            
-            <div class="row">
-                <!-- Card 1 -->
-                <div class="col-4">
-                    <div class="card">
-                        <div class="card-icon">👤</div>
-                        <h5>Guru Kompeten</h5>
-                        <p>Dididik oleh tenaga pengajar berpengalaman yang berdedikasi tinggi membimbing siswa serta Linear di Bidang Studi yang perlukan.</p>
-                    </div>
+            <div class="grid-3">
+                <div class="card">
+                    <div class="icon-box">👤</div>
+                    <h5 style="font-size: 1.2rem; margin-bottom: 10px;">Guru Kompeten</h5>
+                    <p style="color: #475569; font-size: 0.95rem;">Dididik oleh tenaga pengajar berpengalaman yang berdedikasi tinggi membimbing siswa serta Linear di Bidang Studi yang perlukan.</p>
                 </div>
-                <!-- Card 2 -->
-                <div class="col-4">
-                    <div class="card">
-                        <div class="card-icon">💻</div>
-                        <h5>Fasilitas Lengkap</h5>
-                        <p>Laboratorium komputer, perpustakaan, serta sarana olahraga yang mendukung kreativitas siswa.</p>
-                    </div>
+                <div class="card">
+                    <div class="icon-box">💻</div>
+                    <h5 style="font-size: 1.2rem; margin-bottom: 10px;">Fasilitas Lengkap</h5>
+                    <p style="color: #475569; font-size: 0.95rem;">Laboratorium komputer, perpustakaan, serta sarana olahraga yang mendukung kreativitas siswa.</p>
                 </div>
-                <!-- Card 3 -->
-                <div class="col-4">
-                    <div class="card">
-                        <div class="card-icon">🏆</div>
-                        <h5>Ekstrakurikuler Aktif</h5>
-                        <p>Berbagai wadah bakat seperti Pramuka, Olahraga Minat Bakat, Kesenian.</p>
+                <div class="card">
+                    <div class="icon-box">🏆</div>
+                    <h5 style="font-size: 1.2rem; margin-bottom: 10px;">Ekstrakurikuler Aktif</h5>
+                    <p style="color: #475569; font-size: 0.95rem;">Berbagai wadah bakat seperti Pramuka, Olahraga Minat Bakat, Kesenian.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SPMB ONLINE -->
+    <section id="spmb">
+        <div>
+            <div class="text-center">
+                <span class="sub">Informasi Tahunan</span>
+                <h2>SPMB Online SMPN 1 Singkup</h2>
+                <p style="color: #475569; margin-top: 10px;">Selamat datang calon siswa baru! Bergabunglah bersama kami menjadi generasi cerdas, berkarakter, dan berakhlak mulia.</p>
+            </div>
+            <div class="grid-2">
+                <div class="card">
+                    <h4 style="margin-bottom: 10px;">📌 Syarat Pendaftaran</h4>
+                    <ul>
+                        <li>Berusia maksimal 15 tahun pada tanggal Juli tahun berjalan.</li>
+                        <li>Mengisi Formulir Pendaftaran Online/Offline.</li>
+                        <li>Fotokopi Ijazah SD/MI atau Surat Keterangan Lulus (SKL) (2 lembar).</li>
+                        <li>Fotokopi Kartu Keluarga (KK) &amp; Akta Kelahiran (2 lembar).</li>
+                        <li>Fotokopi KIP / PKH (Jika memiliki, untuk jalur afirmasi).</li>
+                        <li>Pas foto hitam putih/warna ukuran 3x4 (3 lembar).</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4>🗺️ Alur Pendaftaran Online</h4>
+                    <div style="margin-top: 15px;">
+                        <p><strong>1. Isi Formulir:</strong> Klik tombol daftar di bawah dan lengkapi data diri calon siswa.</p>
+                        <p style="margin-top: 10px;"><strong>2. Verifikasi Berkas:</strong> Panitia akan memeriksa kesesuaian dokumen pendaftaran.</p>
+                        <p style="margin-top: 10px;"><strong>3. Pengumuman:</strong> Hasil seleksi akhir dapat dilihat langsung di papan pengumuman sekolah atau via website ini.</p>
+                    </div>
+                    <div style="margin-top: 25px; border-top: 1px dashed #cbd5e1; padding-top: 15px;">
+                        <p style="font-size: 0.95rem; color: #475569;">Pendaftaran gelombang pertama telah dibuka resmi!</p>
+                        <a href="#" target="_blank" class="spmb-btn">📝 Klik Untuk Daftar SPMB</a>
                     </div>
                 </div>
             </div>
@@ -499,75 +572,71 @@
 
     <!-- FOOTER -->
     <footer id="kontak">
-        <div class="container">
-            <div class="row">
-                <div class="col-6">
+        <div>
+            <div>
+                <div style="flex: 2; min-width: 280px;">
                     <h5>SMPN 1 SINGKUP</h5>
-                    <p>Alamat Resmi: Jln. Bukit Nibung Desa Sukaraja, Kecamatan Singkup, Kabupaten Ketapang, Kalimantan Barat.</p>
+                    <p style="color: #94a3b8; font-size: 0.95rem;">Alamat Resmi: Jln. Bukit Nibung Desa Sukaraja, Kecamatan Singkup, Kabupaten Ketapang, Kalimantan Barat.</p>
                 </div>
-                <div class="col-6 text-end">
+                <div style="flex: 1; min-width: 200px;">
                     <h5>Hubungi Kami</h5>
-                    <p>Senin - Jumat: Jam kerja</p>
-                    <div class="social-icons">
+                    <p style="color: #94a3b8; font-size: 0.95rem; margin-bottom: 15px;">Senin - Jumat: Jam kerja</p>
+                    <div>
                         <a href="#">🌐 Facebook</a>
                         <a href="#">📸 Instagram</a>
                     </div>
                 </div>
             </div>
             <hr>
-            <div class="text-center" style="color: #bdc3c7; font-size: 13px;">
-                &copy; 2026 SMP Negeri 1 Singkup. Hak Cipta Dilindungi.
+            <div class="footer-bottom">
+                © 2026 SMP Negeri 1 Singkup. Hak Cipta Dilindungi.
             </div>
         </div>
     </footer>
-<section id="SPMB" class="py-5" style="background-color: #f8fafc; border-top: 3px solid #f1c40f;">
-        <div class="container">
-            <div class="text-center mb-5">
-                <span class="section-tag" style="background-color: #e1f5fe; color: #0288d1; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: bold;">Informasi Tahunan</span>
-                <h2 class="section-title" style="margin-top: 10px;">SPMB Online SMPN 1 Singkup</h2>
-                <p style="color: #7f8c8d; max-width: 600px; margin: 0 auto; font-size: 15px;">Selamat datang calon siswa baru! Bergabunglah bersama kami menjadi generasi cerdas, berkarakter, dan berakhlak mulia.</p>
-            </div>
 
-            <div class="row">
-                <div class="col-6">
-                    <div style="background: #ffffff; padding: 30px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.02); border: 1px solid #edf2f7; height: 100%;">
-                        <h4 style="color: #2c3e50; margin-bottom: 20px; display: flex; align-items: center; gap: 10px;">📌 Syarat Pendaftaran</h4>
-                        <ul style="color: #4a5568; font-size: 15px; padding-left: 20px; line-height: 2;">
-                            <li>Berusia maksimal 15 tahun pada tanggal Juli tahun berjalan.</li>
-                            <li>Mengisi Formulir Pendaftaran Online/Offline.</li>
-                            <li>Fotokopi Ijazah SD/MI atau Surat Keterangan Lulus (SKL) (2 lembar).</li>
-                            <li>Fotokopi Kartu Keluarga (KK) & Akta Kelahiran (2 lembar).</li>
-                            <li>Fotokopi KIP / PKH (Jika memiliki, untuk jalur afirmasi).</li>
-                            <li>Pas foto hitam putih/warna ukuran 3x4 (3 lembar).</li>
-                        </ul>
-                    </div>
-                </div>
+    <!-- JAVASCRIPT UNTUK MENJALANKAN SLIDE SHOW OTOMATIS -->
+    <script>
+        let slideIndex = 0;
+        const slides = document.querySelectorAll('.carousel-slide');
+        const dots = document.querySelectorAll('.dot');
+        let slideInterval;
 
-                <div class="col-6">
-                    <div style="background: #ffffff; padding: 30px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.02); border: 1px solid #edf2f7; height: 100%; display: flex; flex-column: column; justify-content: space-between;">
-                        <div>
-                            <h4 style="color: #2c3e50; margin-bottom: 20px;">🗺️ Alur Pendaftaran Online</h4>
-                            <div style="margin-bottom: 15px; font-size: 14px; color: #4a5568;">
-                                <strong style="color: #3498db;">1. Isi Formulir:</strong> Klik tombol daftar di bawah dan lengkapi data diri calon siswa.
-                            </div>
-                            <div style="margin-bottom: 15px; font-size: 14px; color: #4a5568;">
-                                <strong style="color: #3498db;">2. Verifikasi Berkas:</strong> Panitia akan memeriksa kesesuaian dokumen pendaftaran.
-                            </div>
-                            <div style="margin-bottom: 25px; font-size: 14px; color: #4a5568;">
-                                <strong style="color: #3498db;">3. Pengumuman:</strong> Hasil seleksi akhir dapat dilihat langsung di papan pengumuman sekolah atau via website ini.
-                            </div>
-                        </div>
-                        
-                        <div style="background: #fff9db; border: 1px dashed #f59f00; padding: 20px; border-radius: 8px; text-align: center;">
-                            <p style="font-size: 14px; color: #664d03; margin-bottom: 15px; font-weight: 500;">Pendaftaran gelombang pertama telah dibuka resmi!</p>
-                            <a href="#" target="_blank" style="display: inline-block; background-color: #2f9e44; color: white; text-decoration: none; padding: 12px 30px; font-weight: bold; border-radius: 6px; font-size: 16px; box-shadow: 0 4px 12px rgba(47,158,68,0.3); transition: all 0.2s;">
-                                📝 Klik Untuk Daftar SPMB
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+        function showSlides(n) {
+            if (n >= slides.length) { slideIndex = 0; }
+            if (n < 0) { slideIndex = slides.length - 1; }
+            
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            
+            slides[slideIndex].classList.add('active');
+            dots[slideIndex].classList.add('active');
+        }
+
+        function moveSlide(n) {
+            slideIndex += n;
+            showSlides(slideIndex);
+            resetTimer();
+        }
+
+        function currentSlide(n) {
+            slideIndex = n;
+            showSlides(slideIndex);
+            resetTimer();
+        }
+
+        function startTimer() {
+            slideInterval = setInterval(() => {
+                slideIndex++;
+                showSlides(slideIndex);
+            }, 5000); // Berganti otomatis setiap 5 detik
+        }
+
+        function resetTimer() {
+            clearInterval(slideInterval);
+            startTimer();
+        }
+
+        startTimer();
+    </script>
 </body>
 </html>
