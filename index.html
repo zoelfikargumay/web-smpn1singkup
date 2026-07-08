@@ -431,6 +431,82 @@
             .carousel-prev, .carousel-next { display: none; }
             .gallery-desc { opacity: 1; background: rgba(0,0,0,0.6); }
         }
+        /* ------------------------------------------- */
+        /* CSS BARU: SLIDE SHOW PROFIL GURU (CAROUSEL) */
+        /* ------------------------------------------- */
+        .teacher-carousel-container {
+            position: relative;
+            max-width: 500px;
+            margin: 0 auto;
+            overflow: hidden;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            padding: 30px 20px;
+            text-align: center;
+        }
+        .teacher-wrapper {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            width: 100%;
+        }
+        .teacher-slide {
+            min-width: 100%;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .teacher-img-box {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid #3b82f6;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            background: #f1f5f9;
+        }
+        .teacher-img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .teacher-slide h4 {
+            font-size: 1.3rem;
+            color: #1e293b;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .teacher-slide p.role {
+            font-size: 1rem;
+            color: #3b82f6;
+            font-weight: 600;
+        }
+        .t-prev, .t-next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #f1f5f9;
+            color: #1e293b;
+            border: none;
+            width: 40px;
+            height: 40px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 50%;
+            z-index: 10;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: all 0.2s;
+        }
+        .t-prev:hover, .t-next:hover {
+            background: #3b82f6;
+            color: #fff;
+        }
+        .t-prev { left: 10px; }
+        .t-next { right: 10px; }
     </style>
 </head>
 <body>
@@ -618,38 +694,124 @@
     </div>
 
     <!-- DAFTAR GURU -->
+    <!-- UPDATE: SLIDE SHOW DAFTAR GURU & STAF SEKOLAH -->
     <section style="background: #f1f5f9;">
         <div>
             <div class="text-center">
                 <span class="sub">Tenaga Pendidik</span>
                 <h2>Daftar Guru &amp; Staf Sekolah</h2>
+                <p style="color: #64748b; font-size: 0.95rem; margin-top: 5px;">Geser untuk melihat profil guru kami</p>
             </div>
-            <div style="overflow-x: auto;">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>No</th>
-                            <th>Nama Lengkap</th>
-                            <th>Jabatan / Mata Pelajaran</th>
-                            <th>Status</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>1</td><td>ARHADI, S.Pd.</td><td>Kepala Sekolah</td><td><span class="status-active">Aktif</span></td></tr>
-                        <tr><td>2</td><td>SULISTINI, S.Pd.</td><td>Guru Matematika</td><td><span class="status-active">Aktif</span></td></tr>
-                        <tr><td>3</td><td>YENI JUMIARTI, S.Pd.</td><td>Guru Bahasa Indonesia</td><td><span class="status-active">Aktif</span></td></tr>
-                        <tr><td>4</td><td>NURAFNIAR, S.Pd.</td><td>Guru Bahasa Inggris</td><td><span class="status-active">Aktif</span></td></tr>
-                        <tr><td>5</td><td>YULIS RAHMAWATI, S.Pd.</td><td>Guru IPA / Sains</td><td><span class="status-active">Aktif</span></td></tr>
-                        <tr><td>6</td><td>ZOELFIKAR GUMAY, SE.</td><td>Guru IPS</td><td><span class="status-active">Aktif</span></td></tr>
-                        <tr><td>7</td><td>SRI PARYANTI, S.Pd.</td><td>Guru AGAMA ISLAM</td><td><span class="status-active">Aktif</span></td></tr>
-                        <tr><td>8</td><td>SUBRIANTO, S.Pd.</td><td>Guru AGAMA ISLAM</td><td><span class="status-active">Aktif</span></td></tr>
-                        <tr><td>9</td><td>MALINI, S.Pd.</td><td>Guru AGAMA KRISTEN &amp; KATHOLIK</td><td><span class="status-active">Aktif</span></td></tr>
-                        <tr><td>10</td><td>REPINA LAYA, S.Pd.</td><td>Guru Pendidikan Kewarganegaraan</td><td><span class="status-active">Aktif</span></td></tr>
-                        <tr><td>11</td><td>LILIEN TRIANA, S.Pd.</td><td>Guru Pendidikan Kewarganegaraan</td><td><span class="status-active">Aktif</span></td></tr>
-                    </tbody>
-                </table>
+            
+            <div class="teacher-carousel-container">
+                <div class="teacher-wrapper" id="teacherWrapper">
+                    
+                    <!-- Slide Guru 1 -->
+                    <div class="teacher-slide">
+                        <div class="teacher-img-box">
+                            <img src="arhadi.jpg" alt="ARHADI, S.Pd.">
+                        </div>
+                        <h4>ARHADI, S.Pd.</h4>
+                        <p class="role">Kepala Sekolah</p>
+                        <span class="status-active">Aktif</span>
+                    </div>
+
+                    <!-- Slide Guru 2 -->
+                    <div class="teacher-slide">
+                        <div class="teacher-img-box">
+                            <img src="sulistini.jpg" alt="SULISTINI, S.Pd.">
+                        </div>
+                        <h4>SULISTINI, S.Pd.</h4>
+                        <p class="role">Guru Matematika</p>
+                        <span class="status-active">Aktif</span>
+                    </div>
+
+                    <!-- Slide Guru 3 -->
+                    <div class="teacher-slide">
+                        <div class="teacher-img-box">
+                            <img src="yenijumiarti.jpg" alt="YENI JUMIARTI, S.Pd.">
+                        </div>
+                        <h4>YENI JUMIARTI, S.Pd.</h4>
+                        <p class="role">Guru Bahasa Indonesia</p>
+                        <span class="status-active">Aktif</span>
+                    </div>
+
+                    <!-- Slide Guru 4 -->
+                    <div class="teacher-slide">
+                        <div class="teacher-img-box">
+                            <img src="nurafniar.jpg" alt="NURAFNIAR, S.Pd.">
+                        </div>
+                        <h4>NURAFNIAR, S.Pd.</h4>
+                        <p class="role">Guru Bahasa Inggris</p>
+                        <span class="status-active">Aktif</span>
+                    </div>
+
+                    <!-- Slide Guru 5 -->
+                    <div class="teacher-slide">
+                        <div class="teacher-img-box">
+                            <img src="yulisrahmawati.jpg" alt="YULIS RAHMAWATI, S.Pd.">
+                        </div>
+                        <h4>YULIS RAHMAWATI, S.Pd.</h4>
+                        <p class="role">Guru IPA / Sains</p>
+                        <span class="status-active">Aktif</span>
+                    </div>
+
+                    <!-- Slide Guru 6 -->
+                    <div class="teacher-slide">
+                        <div class="teacher-img-box">
+                            <img src="zoelfikargumay.jpg" alt="ZOELFIKAR GUMAY, SE.">
+                        </div>
+                        <h4>ZOELFIKAR GUMAY, SE.</h4>
+                        <p class="role">Guru IPS</p>
+                        <span class="status-active">Aktif</span>
+                    </div>
+
+                    <!-- Slide Guru 7 -->
+                    <div class="teacher-slide">
+                        <div class="teacher-img-box">
+                            <img src="sriparyanti.jpg" alt="SRI PARYANTI, S.Pd.">
+                        </div>
+                        <h4>SRI PARYANTI, S.Pd.</h4>
+                        <p class="role">Guru AGAMA ISLAM</p>
+                        <span class="status-active">Aktif</span>
+                    </div>
+
+                    <!-- Slide Guru 8 -->
+                    <div class="teacher-slide">
+                        <div class="teacher-img-box">
+                            <img src="subrianto.jpg" alt="SUBRIANTO, S.Pd.">
+                        </div>
+                        <h4>SUBRIANTO, S.Pd.</h4>
+                        <p class="role">Guru AGAMA ISLAM</p>
+                        <span class="status-active">Aktif</span>
+                    </div>
+
+                    <!-- Slide Guru 9 -->
+                    <div class="teacher-slide">
+                        <div class="teacher-img-box">
+                            <img src="malini.jpg" alt="MALINI, S.Pd.">
+                        </div>
+                        <h4>MALINI, S.Pd.</h4>
+                        <p class="role">Guru AGAMA KRISTEN &amp; KATHOLIK</p>
+                        <span class="status-active">Aktif</span>
+                    </div>
+
+                    <!-- Slide Guru 10 -->
+                    <div class="teacher-slide">
+                        <div class="teacher-img-box">
+                            <img src="repinalaya.jpg" alt="REPINA LAYA, S.Pd.">
+                        </div>
+                        <h4>REPINA LAYA, S.Pd.</h4>
+                        <p class="role">Guru Pendidikan Kewarganegaraan</p>
+                        <span class="status-active">Aktif</span>
+                    </div>
+
+                </div>
+
+                <!-- Tombol Navigasi Manual -->
+                <button class="t-prev" onclick="moveTeacher(-1)">&#10094;</button>
+                <button class="t-next" onclick="moveTeacher(1)">&#10095;</button>
             </div>
-            <p style="font-size: 0.85rem; color: #64748b; margin-top: 15px; text-align: center;">*Catatan: Nama-nama di atas adalah contoh. Kamu bisa mengubah atau menambahkannya langsung di dalam kodingan HTML.</p>
         </div>
     </section>
     
