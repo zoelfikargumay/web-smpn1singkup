@@ -971,6 +971,41 @@
                 lightbox.style.display = "none";
             }
         }
+        // ------------------------------------------- //
+        // JS UTUK MENJALANKAN CAROUSEL SLIDE GURU     //
+        // ------------------------------------------- //
+        let teacherIndex = 0;
+        const teacherWrapper = document.getElementById("teacherWrapper");
+        const totalTeachers = document.querySelectorAll(".teacher-slide").length;
+        let teacherInterval;
+
+        function showTeacherSlide(index) {
+            if (index >= totalTeachers) { teacherIndex = 0; }
+            else if (index < 0) { teacherIndex = totalTeachers - 1; }
+            else { teacherIndex = index; }
+            
+            teacherWrapper.style.transform = `translateX(-${teacherIndex * 100}%)`;
+        }
+
+        function moveTeacher(n) {
+            teacherIndex += n;
+            showTeacherSlide(teacherIndex);
+            resetTeacherTimer();
+        }
+
+        function startTeacherTimer() {
+            teacherInterval = setInterval(() => {
+                teacherIndex++;
+                showTeacherSlide(teacherIndex);
+            }, 4000); // Bergeser otomatis setiap 4 detik
+        }
+
+        function resetTeacherTimer() {
+            clearInterval(teacherInterval);
+            startTeacherTimer();
+        }
+
+        startTeacherTimer();
     </script>
 </body>
 </html>
