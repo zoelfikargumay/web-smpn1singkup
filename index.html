@@ -589,7 +589,16 @@
         <div>
             <div class="grid-2">
                 <div class="img-box">
-                    <img alt="Gedung Sekolah SMPN 1" src="arhadi.png">
+                    .img-box img {
+    width: 100%;
+    max-width: 340px; /* Ukuran pas menurut saya agar tidak terlalu raksasa */
+    height: auto;
+    display: block;
+    margin: 0 auto;   /* Memastikan foto berada di posisi tengah */
+    border-radius: 12px; /* Membuat sudut foto sedikit melengkung halus agar modern */
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1); /* Memberikan efek bayangan lembut di bawah foto */
+}
+                    <img alt= src="arhadi.png">
                 </div>
                 <div>
                     <span class="sub">Sambutan Sekolah</span>
@@ -769,7 +778,7 @@
                     <!-- Slide Guru 7 -->
                     <div class="teacher-slide">
                         <div class="teacher-img-box">
-                            <img src="sriparyanti.jpg" alt="SRI PARYANTI, S.Pd.">
+                            <img src="sriparyanti.jpeg" alt="SRI PARYANTI, S.Pd.">
                         </div>
                         <h4>SRI PARYANTI, S.Pd.</h4>
                         <p class="role">Guru AGAMA ISLAM</p>
